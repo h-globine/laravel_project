@@ -1,10 +1,21 @@
 # laravel_project
 
-dans le dossier Laradock, lancer: 
-docker-compose up -d nginx mysql phpmyadmin workspace
+- installer Laradock
 
-puis pour rentrer sur le workspace lancer: 
- docker-compose exec --user=www-data workspace bash
+- se placer dans le dossier Laradock
+- lancer : cp env-example .env
+- se deplacer jusqu'a nginx/sites/defaut.conf 
+- ajouter à la ligne root (ligne 13) la root suivante "/var/www/laravel_project/public;"
+- lancer un docker-compose build nginx à la racine du dossier Laradock
+
+- se placer à la racine du dossier laravel_project
+- lancer un 'cp .env-example .env'
+- lancer un 'composer install'
+
+- puis lancer à la racine de Laradock : docker-compose up -d nginx mysql phpmyadmin workspace
+- puis pour rentrer sur le workspace lancer: 
+    docker-compose exec --user=www-data workspace bash
+- une fois sur le workspace, se deplacer dans laravel_project et lancer : php artisan key:generate
  
- A la racine du dossier LARAVEL_PROJECT faire un cp .env.example .env
+Lancer localhost:80
  
