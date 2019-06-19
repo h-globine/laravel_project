@@ -29,3 +29,6 @@ COMPOSER:
 
 Si un membre du groupe fait un 'composer update' d'un package ou des tous les packages,
 tous les autres membres, une fois le pull fait, lancer un 'composer install' pour recuperer exactement les memes versions de packages 
+
+Creation Modele AddFriend
+php artisan make:model AddFriend
