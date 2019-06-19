@@ -11,7 +11,7 @@
 
 2/
 - se placer à la racine du dossier laravel_project
-- lancer un 'cp .env-example .env'
+- lancer un 'cp .env.example .env'
 - lancer un 'composer install'
 
 3/
@@ -35,7 +35,7 @@ DB_PASSWORD=root
 Pour se connecter à la BDD : localhost:8080 
 mysql/ root/ root
 
-Pour créer et remplir la BDD:
+Pour créer et remplir la BDD (sur le container workspace /laravel_project) . :
 - créer la base 'test' manuellement 
 - php artisan migrate
 - dans docker workspace 'php artisan db:seed'
