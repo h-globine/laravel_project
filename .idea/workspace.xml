@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="659e92e6-d05b-48ea-8b0b-2a4a1b3efb0a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -256,12 +255,12 @@
       <option name="presentableId" value="Default" />
       <updated>1560942431872</updated>
       <workItem from="1560942433586" duration="11000" />
-      <workItem from="1560942447462" duration="267000" />
+      <workItem from="1560942447462" duration="385000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278000" />
+    <option name="totallyTimeSpent" value="396000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1390" height="877" extended-state="6" />
