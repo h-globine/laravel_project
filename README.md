@@ -22,12 +22,22 @@
  
 Lancer localhost:80
 
+Dans le .env de laravel changer les informations de connexion à la BDD comme suit: 
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=test
+DB_USERNAME=root
+DB_PASSWORD=root
+
+!!! Si quelqu'un modifie des infos, prevenir les autres !!! 
+
 Pour se connecter à la BDD : localhost:8080 
 mysql/ root/ root
 
 Pour créer et remplir la BDD:
-- php artisan migrate
 - créer la base 'test' manuellement 
+- php artisan migrate
 - dans docker workspace 'php artisan db:seed'
  
  
