@@ -14,7 +14,20 @@
             </div>
         </div>
     </form>
+
+
+
+
+
+
+
+
 @endsection
 
-<?php var_dump($_POST);?>
+
+
+
+<?php foreach ($search as $item) {
+  echo $item->name;
+} ?>
 
