@@ -25,5 +25,7 @@ Lancer localhost:80
  
 COMPOSER: 
 
+/!\ Eviter de faire un composer update !! si c'est le cas, prevenir l'equipe!! /!\
+
 Si un membre du groupe fait un 'composer update' d'un package ou des tous les packages,
 tous les autres membres, une fois le pull fait, lancer un 'composer install' pour recuperer exactement les memes versions de packages 
