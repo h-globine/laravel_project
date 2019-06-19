@@ -21,6 +21,14 @@
 - une fois sur le workspace, se deplacer dans laravel_project et lancer : php artisan key:generate
  
 Lancer localhost:80
+
+Pour se connecter à la BDD : localhost:8080 
+mysql/ root/ root
+
+Pour créer et remplir la BDD:
+- php artisan migrate
+- créer la base 'test' manuellement 
+- dans docker workspace 'php artisan db:seed'
  
  
 COMPOSER: 
@@ -30,6 +38,11 @@ COMPOSER:
 Si un membre du groupe fait un 'composer update' d'un package ou des tous les packages,
 tous les autres membres, une fois le pull fait, lancer un 'composer install' pour recuperer exactement les memes versions de packages 
 
-Creation Modele AddFriend
 
+LARAVEL: 
+
+Creation Modele AddFriend
 php artisan make:model AddFriend
+
+
+
