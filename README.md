@@ -5,7 +5,7 @@
 1/
 - se placer dans le dossier Laradock
 - lancer : cp env-example .env
-- se deplacer jusqu'a nginx/sites/defaut.conf 
+- utiliser la commande "sudo nano nginx/sites/defaut.conf"
 - ajouter à la ligne root (ligne 13) la root suivante "/var/www/laravel_project/public;"
 - lancer un docker-compose build nginx à la racine du dossier Laradock
 
