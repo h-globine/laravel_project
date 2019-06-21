@@ -41,6 +41,14 @@
 
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
+                                @csrf
+                              <p> {{captcha_img() }} </p>
+                              <p><input type="text" name="captcha"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
