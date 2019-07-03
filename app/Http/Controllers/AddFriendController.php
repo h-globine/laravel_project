@@ -42,6 +42,12 @@ class AddFriendController extends Controller
         $search =  $this->addfriendRepository->getPerson(
             $request->search
         );
+        
+
+        if (count($search)== 0){
+            echo "1";
+            $search = $this->addfriendRepository->getAllPerson();
+        }
 
         return view('addFriend/addfriend', [
             'search' => $search
