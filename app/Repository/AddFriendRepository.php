@@ -26,4 +26,14 @@ class AddFriendRepository
             ->get();
         return $search;
     }
+
+    public function getAllPerson(){
+        $allPerson = $this->user->newQuery()
+            ->select('name','id')
+            ->get();
+        return $allPerson;
+
+    }
+
+
 }

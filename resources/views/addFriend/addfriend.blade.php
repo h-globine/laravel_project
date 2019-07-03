@@ -14,7 +14,29 @@
             </div>
         </div>
     </form>
+
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">First</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <?php foreach ($allPerson as $test):?>
+                    <?php echo $test->name?>
+                <?php endforeach;?>
+            </td>
+            <td>test</td>
+        </tr>
+        </tbody>
+    </table>
+
+
 @endsection
 
-<?php var_dump($_POST);?>
+
 
