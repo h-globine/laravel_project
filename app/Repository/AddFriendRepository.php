@@ -13,6 +13,11 @@ class AddFriendRepository
 
     private $user;
 
+    public function __construct(User $user)
+    {
+        $this->user = $user;
+    }
+
 
     public function getPerson($user){
         $search = $this->user->newQuery()
