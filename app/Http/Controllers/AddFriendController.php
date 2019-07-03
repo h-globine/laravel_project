@@ -45,7 +45,6 @@ class AddFriendController extends Controller
             'search' => $search
         ]);
 
-
     }
 
 
@@ -54,7 +53,7 @@ class AddFriendController extends Controller
 
     {
 
-        //
+        
 
     }
 

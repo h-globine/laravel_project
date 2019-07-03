@@ -12,12 +12,10 @@ use Illuminate\Support\Facades\Auth;
 class AddFriendRepository
 {
 
-    private $addFriend;
     private $user;
 
-    public function __construct(AddFriend $addFriend, User $user)
+    public function __construct(User $user)
     {
-        $this->addFriend = $addFriend;
         $this->user = $user;
     }
 

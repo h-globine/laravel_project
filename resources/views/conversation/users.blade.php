@@ -10,6 +10,9 @@
                         </span>
                     @endif
                 </span>
+
+                {{$user->unread}}
+
             </a>
         @endforeach
     </div>

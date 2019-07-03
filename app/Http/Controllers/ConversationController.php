@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NewMessage;
 use App\Http\Requests\StoreMessageRequest;
 use App\Notifications\MessageReceived;
 use App\Repository\ConversationRepository;
@@ -26,7 +27,7 @@ class ConversationController extends Controller
 
     public function index(){
         return view('conversation/index', [
-            'users' => $this->conversationRepository->getConversations($this->auth->user()->id),
+            'users' => $this->conversationRepository->getConversations($this-> auth->user()->id),
             'unread'=> $this->conversationRepository->unreadCount($this->auth->user()->id)
         ]);
     }
@@ -53,7 +54,8 @@ class ConversationController extends Controller
             $this->auth->user()->id,
             $user->id
         );
-        $user->notify(new MessageReceived($message));
+
+
         return redirect(route('conversation.show', ['id'=>$user->id]));
     }
 }
