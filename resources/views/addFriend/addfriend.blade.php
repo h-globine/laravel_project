@@ -14,28 +14,40 @@
             </div>
         </div>
     </form>
-
-
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">Name</th>
-            <th scope="col">First</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>
-                <?php foreach ($allPerson as $test):?>
-                    <?php echo $test->name?>
-                <?php endforeach;?>
-            </td>
-            <td>test</td>
-        </tr>
-        </tbody>
-    </table>
-
-
+    <br>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php if (!isset($search)):?>
+                    <?php foreach ($allPerson as $test):?>
+                    <tr>
+                        <td>
+                            <?php echo $test->name?>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <?php endforeach;?>
+                <?php else: ?>
+                    <?php foreach ($search as $test):?>
+                        <tr>
+                            <td>
+                                <?php echo $test->name?>
+                            </td>
+                            <td></td>
+                        </tr>
+                    <?php endforeach;?>
+                <?php endif;?>
+                </tbody>
+             </table>
+        </div>
+    </div>
 @endsection
 
 
