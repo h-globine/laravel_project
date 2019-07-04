@@ -14,7 +14,41 @@
             </div>
         </div>
     </form>
+    <br>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php if (!isset($search)):?>
+                    <?php foreach ($allPerson as $test):?>
+                    <tr>
+                        <td>
+                            <?php echo $test->name?>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <?php endforeach;?>
+                <?php else: ?>
+                    <?php foreach ($search as $test):?>
+                        <tr>
+                            <td>
+                                <?php echo $test->name?>
+                            </td>
+                            <td></td>
+                        </tr>
+                    <?php endforeach;?>
+                <?php endif;?>
+                </tbody>
+             </table>
+        </div>
+    </div>
 @endsection
 
-<?php var_dump($_POST);?>
+
 

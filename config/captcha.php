@@ -2,9 +2,9 @@
 
 return [
     'default'   => [
-        'length'    => 5,
-        'width'     => 120,
-        'height'    => 36,
+        'length'    => 3,
+        'width'     => 225,
+        'height'    => 45,
         'quality'   => 90,
         'math'      => true,
     ],

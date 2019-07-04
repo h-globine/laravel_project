@@ -30,8 +30,10 @@ class AddFriendController extends Controller
     public function index()
 
     {
-
-        return view('addFriend/addfriend');
+        $allPerson = $this->addfriendRepository->getAllPerson();
+        return view('addFriend/addfriend', [
+            'allPerson' => $allPerson
+        ]);
 
     }
 
@@ -40,13 +42,20 @@ class AddFriendController extends Controller
         $search =  $this->addfriendRepository->getPerson(
             $request->search
         );
+        
+
+        if (count($search)== 0){
+            echo "1";
+            $search = $this->addfriendRepository->getAllPerson();
+        }
 
         return view('addFriend/addfriend', [
             'search' => $search
         ]);
 
-
     }
+
+
 
 
 
@@ -54,7 +63,7 @@ class AddFriendController extends Controller
 
     {
 
-        //
+
 
     }
 
