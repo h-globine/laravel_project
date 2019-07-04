@@ -25,3 +25,8 @@ Route::get('/conversation/{user}', 'ConversationController@show')
 Route::post('/conversation/{user}', 'ConversationController@store')->middleware('can:talkTo,user');
 Route::get('/addFriend', 'AddFriendController@index')->name('addfriend');
 Route::post('/addFriend', 'AddFriendController@search');
+// Invitation routes
+Route::get('/invitations', 'InvitationController@list')->middleware('auth')->name('invitations');
+Route::post('/invitations/send/{sender_id}', 'InvitationController@send')->middleware('auth')->name('sendInvitation');
+Route::post('/invitations/accept/{id}', 'InvitationController@accept')->middleware('auth')->name('acceptInvitation');
+Route::post('/invitations/decline/{id}', 'InvitationController@decline')->middleware('auth')->name('declineInvitation');
