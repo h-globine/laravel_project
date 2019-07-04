@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Mews\Captcha\Captcha;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -52,7 +54,7 @@ class LoginController extends Controller
         }
 
         if ($this->attemptLogin($request)  /* && Cpatcha::validate($request->captchafield) */) {
-            dd($request->captcha);
+
             return $this->sendLoginResponse($request);
         }
 
