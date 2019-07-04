@@ -34,6 +34,7 @@ class CaptchaController extends LoginController
             'captcha' => 'required|captcha'
         ],
             ['captcha.captcha'=>'Invalid captcha code.']);
+        
         return $this->login($request);
     }
 
