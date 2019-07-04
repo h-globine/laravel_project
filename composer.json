@@ -15,8 +15,13 @@
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "5.8.0.*",
+<<<<<<< HEAD
+        "mews/captcha": "^2.2",
+        "nesbot/carbon": "^2.19"
+=======
         "nesbot/carbon": "^2.19",
         "predis/predis": "^1.1"
+>>>>>>> bd985a563afc9c80c24846d2d3d55870b52e3fc9
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

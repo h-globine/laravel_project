@@ -25,3 +25,6 @@ Route::get('/conversation/{user}', 'ConversationController@show')
 Route::post('/conversation/{user}', 'ConversationController@store')->middleware('can:talkTo,user');
 Route::get('/addFriend', 'AddFriendController@index')->name('addfriend');
 Route::post('/addFriend', 'AddFriendController@search');
+
+Route::get('my-captcha', 'CaptchaController@myCaptcha')->name('myCaptcha');
+Route::post('my-captcha', 'CaptchaController@myCaptchaPost')->name('myCaptcha.post');
