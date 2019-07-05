@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\User;
+use App\Friend;
 use App\Message;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
@@ -11,21 +11,18 @@ use Illuminate\Support\Facades\Auth;
 
 class ConversationRepository{
 
-    private $user;
+    private $friend;
     private $message;
 
-    public function __construct(User $user, Message $message)
+    public function __construct(Friend $friend, Message $message)
     {
-        $this->user = $user;
+        $this->friend = $friend;
         $this->message = $message;
     }
 
 
     public function getConversations(int $userId){
-        $conversations =  $this->user->newQuery()
-            ->select('name','id')
-            ->where('id', '!=', $userId)
-            ->get();
+        $conversations =  Friend::all()->where('user_1_id', $userId);
         return $conversations;
     }
 
@@ -49,7 +46,8 @@ class ConversationRepository{
     }
 
     public function unreadCount(int $userId){
-        return $this->message->newQuery('to_id',$userId)
+        return $this->message->newQuery()
+            ->where('to_id',$userId)
             ->groupBy('from_id')
             ->selectRaw('from_id, COUNT(id) as count')
             ->whereRaw('read_at IS NULL')
@@ -58,7 +56,7 @@ class ConversationRepository{
     }
 
     public function readAllFrom(int $from, int $to){
-        $this->message->where('to_id', $to)->update(['read_at' => Carbon::now()]);
+        $this->message->where('from_id', $from)->where('to_id', $to)->update(['read_at' => Carbon::now()]);
     }
 
 

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user_id = Auth::user()->getAuthIdentifier();
+        $profile = DB::table('users')->join('profiles','users.id','=','profiles.user_id')
+            ->select('users.*','profiles.*')
+            ->where(['profiles.user_id' =>$user_id])->first();
+
+        return view('home',['profile'=>$profile]);
     }
 }
