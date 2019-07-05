@@ -8,13 +8,21 @@
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-                    @if (session('status'))
+                    @if (session('response'))
                         <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                            {{ session('response') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                   <div class="col-md-4">
+                       @if(!empty($profile))
+                            <img class="avatar" src="{{$profile->profile_pic}}"  style="border-radius: 100%;max-width: 100px;">
+                       @endif
+                   </div>
+                    <div class="col-md-8">
+                        @if(!empty($profile))
+                            <h3>Welcome {{$profile->name}} you're a {{$profile->designation}} </h3>
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>

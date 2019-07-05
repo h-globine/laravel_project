@@ -28,3 +28,10 @@ Route::post('/addFriend', 'AddFriendController@search');
 
 Route::get('my-captcha', 'CaptchaController@myCaptcha')->name('myCaptcha');
 Route::post('my-captcha', 'CaptchaController@myCaptchaPost')->name('myCaptcha.post');
+
+Route::get('/profile', 'ProfileController@profile');
+Route::get('/post', 'PostController@post');
+Route::get('/category', 'CategoryController@category');
+Route::post('/addCategory', 'CategoryController@addCategory');
+Route::get('/category/delete/{id_category}','CategoryController@delete');
+Route::post('addProfile','ProfileController@addProfile');
