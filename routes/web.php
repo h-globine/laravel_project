@@ -25,3 +25,11 @@ Route::get('/conversation/{user}', 'ConversationController@show')
 Route::post('/conversation/{user}', 'ConversationController@store')->middleware('can:talkTo,user');
 Route::get('/addFriend', 'AddFriendController@index')->name('addfriend');
 Route::post('/addFriend', 'AddFriendController@search');
+
+
+Route::get('/profile', 'ProfileController@profile');
+Route::get('/post', 'PostController@post');
+Route::get('/category', 'CategoryController@category');
+Route::post('/addCategory', 'CategoryController@addCategory');
+Route::get('/category/delete/{id_category}','CategoryController@delete');
+Route::post('addProfile','ProfileController@addProfile');
