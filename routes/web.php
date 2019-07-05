@@ -40,3 +40,5 @@ Route::get('/category', 'CategoryController@category');
 Route::post('/addCategory', 'CategoryController@addCategory');
 Route::get('/category/delete/{id_category}','CategoryController@delete');
 Route::post('addProfile','ProfileController@addProfile');
+
+Route::post('addPost','PostController@addPost');
