@@ -15,6 +15,7 @@
         </div>
     </form>
     <br>
+    @include('flash-message')
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <table class="table table-striped">
@@ -27,21 +28,35 @@
                 <tbody>
                 <?php if (!isset($search)):?>
                     <?php foreach ($allPerson as $test):?>
-                    <tr>
-                        <td>
-                            <?php echo $test->name?>
-                        </td>
-                        <td></td>
-                    </tr>
-                    <?php endforeach;?>
-                <?php else: ?>
-                    <?php foreach ($search as $test):?>
+                      @if (Auth::user()->id !== $test->id)
                         <tr>
                             <td>
                                 <?php echo $test->name?>
                             </td>
-                            <td></td>
+                            <td>
+                              <form action="{{route('sendInvitation', ['id' => $test->id])}}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-success">Invite</button>
+                              </form>
+                            </td>
                         </tr>
+                      @endif
+                    <?php endforeach;?>
+                <?php else: ?>
+                    <?php foreach ($search as $test):?>
+                      @if (Auth::user()->id !== $test->id)
+                        <tr>
+                            <td>
+                                <?php echo $test->name?>
+                            </td>
+                            <td>
+                              <form action="{{route('sendInvitation', ['id' => $test->id])}}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-success">Invite</button>
+                              </form>
+                            </td>
+                        </tr>
+                      @endif
                     <?php endforeach;?>
                 <?php endif;?>
                 </tbody>
@@ -49,6 +64,3 @@
         </div>
     </div>
 @endsection
-
-
-

@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\User;
+use App\Friend;
 use App\Message;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
@@ -11,21 +11,18 @@ use Illuminate\Support\Facades\Auth;
 
 class ConversationRepository{
 
-    private $user;
+    private $friend;
     private $message;
 
-    public function __construct(User $user, Message $message)
+    public function __construct(Friend $friend, Message $message)
     {
-        $this->user = $user;
+        $this->friend = $friend;
         $this->message = $message;
     }
 
 
     public function getConversations(int $userId){
-        $conversations =  $this->user->newQuery()
-            ->select('name','id')
-            ->where('id', '!=', $userId)
-            ->get();
+        $conversations =  Friend::all()->where('user_1_id', $userId);
         return $conversations;
     }
 
